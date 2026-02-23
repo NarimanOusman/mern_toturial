@@ -1,0 +1,30 @@
+{
+  "name": "mern_toto",
+  "version": "1.0.0",
+  "description": "goalsetter app toturial",
+  "homepage": "https://github.com/NarimanOusman/mern_toturial#readme",
+  "bugs": {
+    "url": "https://github.com/NarimanOusman/mern_toturial/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NarimanOusman/mern_toturial.git"
+  },
+  "license": "ISC",
+  "author": "Nariman Osman",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

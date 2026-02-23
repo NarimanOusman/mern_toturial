@@ -1,0 +1,7 @@
+# things we donot want to go to our github repository
+node_modules
+#cos Repo becomes huge & slow
+.env 
+# Database passwords, API keys, JWT secrets, etc. we donot commit them to github repository for security reasons. 
+#We can use .env file to store them and add .env to .gitignore file so that it will not be tracked by git and will
+# not be pushed to github repository.
