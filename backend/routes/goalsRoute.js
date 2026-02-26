@@ -2,6 +2,7 @@ const express = require('express');
 const route = express.Router();
 const {getGoals, setGoal, updateGoal, deleteGoal} = require('../controllers/goalsController');
 
+//-----------------------ROUTES V1-------------------
 // // read goals we use GET request
 // route.get('/',(req,res)=>{
 //     res.status(200).json({message:'Welcome to the Goals API'});
@@ -30,8 +31,15 @@ const {getGoals, setGoal, updateGoal, deleteGoal} = require('../controllers/goal
 //So we can use that _id to identify which document we want to update or delete.
 //In the above code, we are using req.params.id to access the id parameter from the URL and then we can use that id to
 //  perform the update or delete operation on the specific document in the database.
-route.get('/',getGoals);
-route.post('/',setGoal);
-route.put('/:id',updateGoal);
-route.delete('/:id',deleteGoal);
+
+//-----------------------ROUTES V2 BY IMPORTING THE FUNCTION FROM ROUTECONTROLER.JS FILE-------------------
+// route.get('/',readGoal);
+// route.post('/',createGoals);
+// route.put('/:id',updateGoal);
+// route.delete('/:id',deleteGoal);
+// module.exports = route;
+
+//-----------------------ROUTES V3 BY USING ROUTER.METHOD()-------------------
+route.route('/').get(readGoal).post(createGoals);
+route.route('/:id').put(updateGoal).delete(deleteGoal);
 module.exports = route;
