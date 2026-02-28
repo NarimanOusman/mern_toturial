@@ -1,6 +1,6 @@
 const express = require('express');
 const route = express.Router();
-const {getGoals, setGoal, updateGoal, deleteGoal} = require('../controllers/goalsController');
+const {createGoal,readGoal, updateGoal, deleteGoal} = require('./controller/routesController');
 
 //-----------------------ROUTES V1-------------------
 // // read goals we use GET request
@@ -40,6 +40,6 @@ const {getGoals, setGoal, updateGoal, deleteGoal} = require('../controllers/goal
 // module.exports = route;
 
 //-----------------------ROUTES V3 BY USING ROUTER.METHOD()-------------------
-route.route('/').get(readGoal).post(createGoals);
+route.route('/').get(readGoal).post(createGoal);
 route.route('/:id').put(updateGoal).delete(deleteGoal);
 module.exports = route;
